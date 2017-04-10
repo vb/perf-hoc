@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import lcHOC from './lcHOC';
+import lcHOC from 'lc-hoc';
 import Highlight from 'react-highlight.js';
 import './highlight.css';
 

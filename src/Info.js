@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import lcHOC from './lcHOC';
+import lcHOC from 'lc-hoc';
 
 class Info extends Component {
   render() {
