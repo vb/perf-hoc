@@ -1,0 +1,25 @@
+{
+  "name": "lc-hoc",
+  "version": "1.0.0",
+  "description": "HOC that helps you visualize and detect unnecessary rendering and performance issues in React.",
+  "main": "lcHOC.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viktorbergehall/lcHOC.git"
+  },
+  "keywords": [
+    "react",
+    "higher-order-component",
+    "performance",
+    "debugging"
+  ],
+  "author": "Viktor Bergehall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viktorbergehall/lcHOC/issues"
+  },
+  "homepage": "https://github.com/viktorbergehall/lcHOC#readme"
+}
