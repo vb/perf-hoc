@@ -1,6 +1,6 @@
 {
   "name": "lc-hoc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HOC that helps you visualize and detect unnecessary rendering and performance issues in React.",
   "main": "dist/lcHOC.js",
   "scripts": {
