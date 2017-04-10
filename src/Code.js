@@ -14,7 +14,7 @@ class Code extends Component {
 
   componentDidMount() {
     const _ = this;
-    setInterval(() => _.setState({ data: 2 }), 5000);
+    setInterval(() => _.setState({ data: new Date() }), 5000);
   }
 
   render() {
@@ -23,6 +23,8 @@ class Code extends Component {
         <h2>Installation and usage</h2>
         <Highlight language={"js"}>
           {`
+            // (this component updates every 5 seconds)
+
             // Step 1: Install
             npm install -S lc-hoc;
 

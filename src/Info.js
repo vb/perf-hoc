@@ -11,7 +11,7 @@ class Info extends Component {
         <p>Each time a component update, a green flash wraps the component (much like paint flashing in devtools) and
           rendering information is logged to the console.</p>
 
-        <p>Have an idea on how to improve this component? Please <a href="https://github.com/viktorbergehall/lc-hoc">contribute on Github</a>!</p>
+        <p>Have an idea on how to improve this component? Please <a href="https://github.com/viktorbergehall/lc-hoc" title="Contribute on Github" target="_blank">contribute on Github</a>!</p>
       </div>
     );
   }
