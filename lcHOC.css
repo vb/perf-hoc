@@ -1,0 +1,24 @@
+.lc-hoc {
+  position: relative;
+}
+
+.lc-hoc:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.lc-hoc--update:before {
+  border: 2px solid green;
+  background-color: rgba(0, 255, 0, 0.25);
+  animation: fadeOut 600ms ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  30% { opacity: 1; }
+  100% { opacity: 0; }
+}
