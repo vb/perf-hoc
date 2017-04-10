@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "lc-hoc": "^1.0.0",
     "react": "^15.5.3",
-    "react-dom": "^15.5.3",
-    "react-highlight.js": "^1.0.5"
+    "react-dom": "^15.5.3"
   },
   "devDependencies": {
+    "lc-hoc": "^1.0.1",
+    "react-highlight.js": "^1.0.5",
     "react-scripts": "0.9.5"
   },
   "scripts": {
