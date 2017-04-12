@@ -50,3 +50,6 @@ lcHOC(componentToStudy, {
   }
 });
 ```
+## Contribute
+
+If you have ideas on how to improve this componentet feel free to request a feature or submit a pull request!
