@@ -3,7 +3,7 @@ lcHOC is a HOC (higher order component) that helps you visualize and detect unne
 
 Each time a component update, a green flash wraps the component (much like paint flashing in devtools) and rendering information is logged to the console.
 
-https://build-ehksycopda.now.sh/
+#### Demo: https://build-ehksycopda.now.sh/
 
 ## Installation and usage
 ```es6
