@@ -1,21 +1,38 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import './lcHOC.css';
 
-const getName = (W) => {
-  return W.displayName ||
-         W.name ||
-         'Component'
-}
-
 const CLASSNAME = 'lc-hoc',
-      CLASSNAME_UPDATE = 'lc-hoc--update'
+  CLASSNAME_UPDATE = 'lc-hoc--update',
+  DEFAULTS = {
+    log: {
+      use: true,
+      expanded: false,
+      renderCount: true,
+      state: true,
+      props: true,
+      timings: true
+    },
+    flash: true
+  };
 
-const lcHOC = (W) => {
+const getName = (W) => W.displayName || W.name || 'Component';
+
+const lcHOC = (W, params) => {
   return class HOC extends W {
     constructor() {
       super();
       this.name = getName(W);
       this.oldProps = {};
+
+      this.settings = this.getSettings();
+    }
+
+    getSettings() {
+      if (typeof params === 'undefined') {
+        return DEFAULTS;
+      }
+
+      return Object.assign({}, DEFAULTS, params);
     }
 
     toggleClass() {
@@ -30,53 +47,74 @@ const lcHOC = (W) => {
     }
 
     componentWillUpdate() {
-      console.time(`${this.name} componentWillUpdate => componentDidUpdate`)
+      if (this.settings.log.timings) {
+        console.time(`${this.name} componentWillUpdate => componentDidUpdate`);
+      }
     }
 
     componentDidUpdate() {
-      this.toggleClass('lc-hoc--update');
-      this.log();
+      if (this.settings.flash) {
+        this.toggleClass('lc-hoc--update');
+      }
+
+      if (this.settings.log.use) {
+        this.log();
+      }
+
     }
 
     log() {
       const newProps = JSON.stringify(this.nextProps),
-            oldProps = JSON.stringify(this.oldProps);
+            oldProps = JSON.stringify(this.oldProps),
+            groupType = this.settings.log.expanded ? 'group' : 'groupCollapsed'
 
-      console.group(`${this.name} update`);
-        console.count(`🌀 ${this.name}: render count`);
+      console[groupType](`${this.name} update`);
 
-        if (this.state !== null) {
-          console.groupCollapsed('⚡️ State');
+        if (this.settings.log.renderCount) {
+          console.count(`🌀 ${this.name}: render count`);
+        }
+
+        if (this.state !== null && this.settings.log.state) {
+          console[groupType]('⚡️ State');
             console.log(this.state);
           console.groupEnd();
         }
 
-        if (newProps !== oldProps) {
-          console.groupCollapsed('🏠 Props');
-            console.log('⬇️ %cOld: ', 'color: gray');
-            console.log(this.oldProps);
-            console.log('⬇️ %cNew: ', 'color: teal');
-            console.log(this.props);
-          console.groupEnd();
-        } else {
-          if (Object.keys(this.props).length === 0 && this.props.constructor === Object) {
-            console.log('❗️ %cProps are empty', 'color: red');
-          } else {
-            console.log('❗️ %cProps are unchanged', 'color: red');
-            console.groupCollapsed('🏠 Props');
+        if (this.settings.log.props) {
+          if (newProps !== oldProps) {
+            console[groupType]('🏠 Props');
+              console.log('⬇️ %cOld: ', 'color: gray');
+              console.log(this.oldProps);
+              console.log('⬇️ %cNew: ', 'color: teal');
               console.log(this.props);
             console.groupEnd();
+          } else {
+            if (Object.keys(this.props).length === 0 && this.props.constructor === Object) {
+              console.log('❗️ %cProps are empty', 'color: red');
+            } else {
+              console.log('❗️ %cProps are unchanged', 'color: red');
+              console[groupType]('🏠 Props');
+                console.log(this.props);
+              console.groupEnd();
+            }
           }
         }
-        console.groupCollapsed('🕗 Timings');
-          console.timeEnd(`${this.name} componentWillUpdate => componentDidUpdate`);
-          console.timeEnd(`${this.name} render => componentDidUpdate`);
-        console.groupEnd();
+
+        if (this.settings.log.timings) {
+          console[groupType]('🕗 Timings');
+            console.timeEnd(`${this.name} componentWillUpdate => componentDidUpdate`);
+            console.timeEnd(`${this.name} render => componentDidUpdate`);
+          console.groupEnd();
+        }
+
       console.groupEnd();
     }
 
     render() {
-      console.time(`${this.name} render => componentDidUpdate`);
+      if (this.settings.log.timings) {
+        console.time(`${this.name} render => componentDidUpdate`);
+      }
+
       return(
         <div
           ref={(ref) => this.lchoc = ref}
