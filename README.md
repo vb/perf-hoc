@@ -7,8 +7,6 @@ https://build-ehksycopda.now.sh/
 
 ## Installation and usage
 ```es6
-// This component updates it's state every 5 seconds.
-
 // Step 1: Install
 npm install -S lc-hoc;
 
