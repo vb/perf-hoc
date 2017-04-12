@@ -1,5 +1,5 @@
-import React from 'react';
-require('./lcHOC.css');
+import React from 'react'; // eslint-disable-line no-unused-vars
+import './lcHOC.css';
 
 const getName = (W) => {
   return W.displayName ||
