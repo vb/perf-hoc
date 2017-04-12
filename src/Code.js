@@ -23,7 +23,7 @@ class Code extends Component {
         <h2>Installation and usage</h2>
         <Highlight language={"js"}>
           {`
-            // (this component updates every 5 seconds)
+            // This component updates it's state every 5 seconds.
 
             // Step 1: Install
             npm install -S lc-hoc;
