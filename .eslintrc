@@ -1,17 +1,17 @@
 {
-  "extends": "eslint:recommended",
-  "env": {
-    "browser": true,
-    "es6": true
+  extends: "eslint:recommended",
+  env: {
+    browser: true,
   },
-  ecmaFeatures: {
-    "jsx": true,
-    modules: true
+  parserOptions: {
+    sourceType: module,
+    ecmaFeatures: {
+      jsx: true
+    }
   },
-  "parserOptions": {
-    "ecmaVersion": 6
+  rules: {
+    "no-console": 0,
+    "react/jsx-uses-react": "error"
   },
-  "rules": {
-    "no-console": 0
-  }
+  "plugins": ["react"]
 }
