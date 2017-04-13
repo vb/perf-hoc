@@ -8,7 +8,7 @@ Each time a component update, a green flash wraps the component (much like paint
 ## Installation and usage
 ```es6
 // Step 1: Install
-npm install -S lc-hoc;
+npm install lc-hoc --save-dev;
 
 // Step 2: Import
 import lcHOC from 'lc-hoc';
@@ -52,4 +52,4 @@ lcHOC(componentToStudy, {
 ```
 ## Contribute
 
-If you have ideas on how to improve this componentet feel free to request a feature or submit a pull request!
+If you have ideas on how to improve this component feel free to request a feature or submit a pull request!
