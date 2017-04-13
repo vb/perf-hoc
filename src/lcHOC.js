@@ -1,4 +1,4 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import './lcHOC.css';
 
 const CLASSNAME = 'lc-hoc',
@@ -60,7 +60,6 @@ const lcHOC = (W, params) => {
       if (this.settings.log.use) {
         this.log();
       }
-
     }
 
     log() {
@@ -106,7 +105,6 @@ const lcHOC = (W, params) => {
             console.timeEnd(`${this.name} render => componentDidUpdate`);
           console.groupEnd();
         }
-
       console.groupEnd();
     }
 
@@ -127,4 +125,3 @@ const lcHOC = (W, params) => {
 };
 
 export default lcHOC;
-//module.exports = lcHOC;
