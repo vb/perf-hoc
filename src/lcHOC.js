@@ -18,6 +18,12 @@ const CLASSNAME = 'lc-hoc',
 const getName = (W) => W.displayName || W.name || 'Component';
 
 const lcHOC = (W, params) => {
+
+  if (!W.prototype.isReactComponent) {
+    console.log('❗️ lcHOC does not currently support stateless components');
+    return W;
+  }
+
   return class HOC extends W {
     constructor() {
       super();
