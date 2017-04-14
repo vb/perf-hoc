@@ -1,7 +1,7 @@
 # lcHOC - Lifecycle HOC
-lcHOC is a HOC (higher order component) that helps you visualize and detect unnecessary rendering and performance issues in React.
+lcHOC is a HOC (higher order component) in React that visualize rendering and logs helpful debugging information to the console.
 
-Each time a component update, a green flash wraps the component (much like paint flashing in devtools) and rendering information is logged to the console.
+Extend each component you want to study with lcHOC and every time that component updates, a green flash wraps the component (much like paint flashing in devtools) and debugging information is logged to the console.
 
 #### Demo: https://build-ehksycopda.now.sh/
 
