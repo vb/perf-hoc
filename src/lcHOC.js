@@ -1,8 +1,11 @@
 import React from 'react';
-import './lcHOC.css';
+import styles from '../assets/lcHOC.css'
 
-const CLASSNAME = 'lc-hoc',
-  CLASSNAME_UPDATE = 'lc-hoc--update',
+const geClass = (className) => styles && styles[className] ? styles[className] : className;
+
+
+const CLASSNAME = geClass('lc-hoc'),
+  CLASSNAME_UPDATE = geClass('lc-hoc--update'),
   DEFAULTS = {
     log: {
       use: true,
