@@ -21,6 +21,17 @@ class componentToStudy extends Component { ...
 // or by wrapping
 export default lcHOC(componentToStudy);
 ```
+## Configuration
+##  with [Webpack](https://webpack.github.io)
+Don't forget to include `node_modules` or `lc-hoc` directory into your webpack configuration :
+```
+// CSS MODULES
+{
+  test: /\.css$/,
+  loader: 'style-loader!css-loader?modules',
+  include: /node_modules/ // or /lc-hoc/
+}
+```
 
 ## Customize
 ```es6

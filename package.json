@@ -4,7 +4,7 @@
   "description": "HOC that helps you visualize and detect unnecessary rendering and performance issues in React.",
   "main": "dist/lcHOC.js",
   "scripts": {
-    "build": "webpack -p"
+    "build": "./node_modules/.bin/babel -d ./dist ./src"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/viktorbergehall/lcHOC#readme",
   "dependencies": {
-    "react": "^15.5.3",
-    "webpack": "^2.3.3"
+    "react": "^15.5.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
