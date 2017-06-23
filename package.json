@@ -13,8 +13,10 @@
   "keywords": [
     "react",
     "higher-order-component",
+    "HOC",
     "performance",
-    "debugging"
+    "debugging",
+    "rendering"
   ],
   "author": "Viktor Bergehall",
   "bugs": {
