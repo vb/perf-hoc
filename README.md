@@ -1,5 +1,5 @@
 # Performance HOC
-perfHOC (previously lcHOC) is a HOC (higher order component) in React that visualize rendering and logs helpful information.
+perf-hoc (previously lcHOC) is a HOC (higher order component) in React that visualize rendering and logs helpful information.
 
 Enhance each component you want to study with perfHOC and every time that component updates, a green flash wraps the component (much like paint flashing in devtools) and debugging information is logged to the console.
 
