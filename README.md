@@ -1,25 +1,25 @@
-# lcHOC - Lifecycle HOC
-lcHOC is a HOC (higher order component) in React that visualize rendering and logs helpful information.
+# perfHOC - performance HOC
+perfHOC (previously lcHOC) is a HOC (higher order component) in React that visualize rendering and logs helpful information.
 
-Enhance each component you want to study with lcHOC and every time that component updates, a green flash wraps the component (much like paint flashing in devtools) and debugging information is logged to the console.
+Enhance each component you want to study with perfHOC and every time that component updates, a green flash wraps the component (much like paint flashing in devtools) and debugging information is logged to the console.
 
 #### Demo: https://build-ehksycopda.now.sh/
 
 ## Installation and usage
 ```es6
 // Step 1: Install
-npm install lc-hoc --save-dev;
+npm install perf-hoc --save-dev;
 
 // Step 2: Import
-import lcHOC from 'lc-hoc';
+import perfHOC from 'perf-hoc';
 
 // Step 3: Enhance
 // by decorating
-@lcHOC
+@perfHOC
 class componentToStudy extends Component { ...
 
 // or by wrapping
-export default lcHOC(componentToStudy);
+export default perfHOC(componentToStudy);
 ```
 
 ## Customize
@@ -36,14 +36,14 @@ export default lcHOC(componentToStudy);
   flash: true
 }
 ```
-You can customize lcHOC by overriding the default settings object above. Example below.
+You can customize perfHOC by overriding the default settings object above. Example below.
 
 ```es6
 // Decorating with customization
-@lcHOC({flash: false, log: {state: false}})
+@perfHOC({flash: false, log: {state: false}})
 
 // Wrapping with customization
-lcHOC(componentToStudy, {
+perfHOC(componentToStudy, {
   flash: false,
   log {
     state: false
