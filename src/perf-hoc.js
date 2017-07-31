@@ -15,9 +15,9 @@ const DEFAULTS = {
 
 const getName = W => W.displayName || W.name || 'Component';
 
-const lcHOC = (W, params) => {
+const perfHOC = (W, params) => {
   if (!W.prototype.isReactComponent) {
-    console.log('❗️ lcHOC does not currently support stateless components');
+    console.log('❗️ perf-hoc does not currently support stateless components');
     return W;
   }
 
@@ -126,7 +126,7 @@ const lcHOC = (W, params) => {
 
       return (
         <div
-          ref={ref => (this.lchoc = ref)}
+          ref={ref => (this.perfHOC = ref)}
           style={{
             position: 'relative'
           }}
@@ -152,4 +152,4 @@ const lcHOC = (W, params) => {
   };
 };
 
-export default lcHOC;
+export default perfHOC;
