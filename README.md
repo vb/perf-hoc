@@ -1,3 +1,6 @@
+## Deprecated
+This functionality is now included in the React Devtools under the option "Highlight Updates"
+
 # Performance HOC
 perf-hoc (previously lcHOC) is a HOC (higher order component) in React that visualize rendering and logs helpful information.
 
